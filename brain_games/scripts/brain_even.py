@@ -1,5 +1,6 @@
 from random import randrange
 from brain_games import cli
+from colorama import Fore
 
 
 def main():
@@ -10,19 +11,20 @@ def main():
     while x < 3:
         n = randrange(1, 50)
         print(f'Question: {n}')
-        answer = input('Your answer:')
+        answer = input('Your answer: ')
         if x >= 2:
-            print(f'Congratulations,!')
+            print(Fore.GREEN + f'Congratulations, {cli.name}!')
             break
         elif n % 2 == 0 and answer == 'yes' or n % 2 != 0 and answer == 'no':
             print('Correct!')
             x += 1
         elif n % 2 == 0 and answer != 'yes':
-            print(f"{answer} is wrong answer ;(. Correct answer was 'yes'. Let's try again,!")
+            print(Fore.RED + f"{answer} is wrong answer ;(. Correct answer was 'yes'. Let's try again, {cli.name}!")
             break
         elif n % 2 != 0 and answer != 'no':
-            print(f"{answer} is wrong answer ;(. Correct answer was 'no'. Let's try again,!")
+            print(Fore.RED + f"{answer} is wrong answer ;(. Correct answer was 'no'. Let's try again, {cli.name}!")
             break
+
 
 if __name__ == '__main__':
     main()
