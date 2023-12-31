@@ -1,28 +1,30 @@
 from random import randrange
 from brain_games import cli
-from colorama import Fore
+from brain_games import phras
 
 
 def main():
     print('Welcome to the Brain Games!')
     cli.welcome_user()
     x = 0
+    y = "yes"
+    n = "no"
     print('Answer "yes" if the number is even, otherwise answer "no".')
     while x <= 3:
         if x == 3:
-            print(Fore.GREEN + f'Congratulations, {cli.name}!')
+            phras.congratulations()
             break
-        n = randrange(1, 50)
-        print(f'Question: {n}')
-        ans = input('Your answer: ')
-        if n % 2 == 0 and ans == 'yes' or n % 2 != 0 and ans == 'no':
+        z = randrange(1, 50)
+        phras.question(z)
+        phras.answer()
+        if z % 2 == 0 and phras.ans == y or z % 2 != 0 and phras.ans == n:
             print('Correct!')
             x += 1
-        elif n % 2 == 0 and ans != 'yes':
-            print(f"'{ans}' is wrong answer ;(. Correct answer was 'yes'. Let's try again, {cli.name}!")
+        elif z % 2 == 0 and phras.ans != y:
+            phras.wrong_answer(phras.ans, y)
             break
-        elif n % 2 != 0 and ans != 'no':
-            print(f"'{ans}' is wrong answer ;(. Correct answer was 'no'. Let's try again, {cli.name}!")
+        elif z % 2 != 0 and phras.ans != n:
+            phras.wrong_answer(phras.ans, n)
             break
 
 
