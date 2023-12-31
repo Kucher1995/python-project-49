@@ -14,15 +14,15 @@ def main():
             break
         n = randrange(1, 50)
         print(f'Question: {n}')
-        answer = input('Your answer: ')
-        if n % 2 == 0 and answer == 'yes' or n % 2 != 0 and answer == 'no':
+        ans = input('Your answer: ')
+        if n % 2 == 0 and ans == 'yes' or n % 2 != 0 and ans == 'no':
             print('Correct!')
             x += 1
-        elif n % 2 == 0 and answer != 'yes':
-            print(Fore.RED + f"'{answer}' is wrong answer ;(. Correct answer was 'yes'. Let's try again, {cli.name}!")
+        elif n % 2 == 0 and ans != 'yes':
+            print(f"'{ans}' is wrong answer ;(. Correct answer was 'yes'. Let's try again, {cli.name}!")
             break
-        elif n % 2 != 0 and answer != 'no':
-            print(Fore.RED + f"'{answer}' is wrong answer ;(. Correct answer was 'no'. Let's try again, {cli.name}!")
+        elif n % 2 != 0 and ans != 'no':
+            print(f"'{ans}' is wrong answer ;(. Correct answer was 'no'. Let's try again, {cli.name}!")
             break
 
 
