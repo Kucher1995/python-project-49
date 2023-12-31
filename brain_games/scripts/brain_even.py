@@ -8,21 +8,21 @@ def main():
     cli.welcome_user()
     x = 0
     print('Answer "yes" if the number is even, otherwise answer "no".')
-    while x < 3:
+    while x <= 3:
+        if x == 3:
+            print(Fore.GREEN + f'Congratulations, {cli.name}!')
+            break
         n = randrange(1, 50)
         print(f'Question: {n}')
         answer = input('Your answer: ')
-        if x >= 2:
-            print(Fore.GREEN + f'Congratulations, {cli.name}!')
-            break
-        elif n % 2 == 0 and answer == 'yes' or n % 2 != 0 and answer == 'no':
+        if n % 2 == 0 and answer == 'yes' or n % 2 != 0 and answer == 'no':
             print('Correct!')
             x += 1
         elif n % 2 == 0 and answer != 'yes':
-            print(Fore.RED + f"{answer} is wrong answer ;(. Correct answer was 'yes'. Let's try again, {cli.name}!")
+            print(Fore.RED + f"'{answer}' is wrong answer ;(. Correct answer was 'yes'. Let's try again, {cli.name}!")
             break
         elif n % 2 != 0 and answer != 'no':
-            print(Fore.RED + f"{answer} is wrong answer ;(. Correct answer was 'no'. Let's try again, {cli.name}!")
+            print(Fore.RED + f"'{answer}' is wrong answer ;(. Correct answer was 'no'. Let's try again, {cli.name}!")
             break
 
 
