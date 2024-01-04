@@ -1,30 +1,42 @@
 #!/usr/bin/env python3
-from brain_games import cli
-from colorama import Fore
+from colorama import init, Fore
+import prompt
 
 
 def start_game(game):
-    cli.welcome_user()
+    welcome_user()
     game.main()
 
 
+def welcome_user():
+    print('Welcome to the Brain Games!')
+    global name
+    init(autoreset=True)
+    name = prompt.string(Fore.BLUE + 'May I have your name? ')
+    print(Fore.BLUE + f'Hello, {name}!')
+    return name
+
+
 def question(n):
-    print(f'Question: {n}')
+    init(autoreset=True)
+    print(Fore.MAGENTA + f'Question: {n}')
 
 
 def answer():
     global ans
-    ans = input('Your answer: ')
+    init(autoreset=True)
+    ans = input(Fore.MAGENTA + 'Your answer: ')
     return ans
 
 
 def wrong_answer(a, b):
-    print(Fore.RED + f"'{a}' is wrong answer ;(. Correct answer was '{b}'. Let's try again, {cli.name}!")
+    print(Fore.RED + f"'{a}' is wrong answer ;(. Correct answer was '{b}'. Let's try again, {name}!")
 
 
 def correct():
-    print('Correct!')
+    init(autoreset=True)
+    print(Fore.YELLOW + 'Correct!')
 
 
 def congratulations():
-    print(Fore.GREEN + f'Congratulations, {cli.name}!')
+    print(Fore.GREEN + f'Congratulations, {name}!')
