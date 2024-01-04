@@ -1,6 +1,10 @@
-from brain_games import cli
+from brain_games.cli import welcome_user
 from colorama import Fore
 
+
+def start_game(game):
+    welcome_user()
+    game
 
 def question(n):
     print(f'Question: {n}')

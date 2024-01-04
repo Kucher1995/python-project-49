@@ -1,32 +1,8 @@
-from random import randrange
-from brain_games import cli
-from brain_games import phras
-
+from brain_games.engine import start_game
+from brain_games.games import br_evens
 
 def main():
-    print('Welcome to the Brain Games!')
-    cli.welcome_user()
-    x = 0
-    y = "yes"
-    n = "no"
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    while x <= 3:
-        z = randrange(1, 50)
-        phras.question(z)
-        phras.answer()
-        if z % 2 == 0 and phras.ans == y or z % 2 != 0 and phras.ans == n:
-            if x == 2:
-                phras.congratulations()
-                break
-            else:
-                phras.correct()
-            x += 1
-        elif z % 2 == 0 and phras.ans != y:
-            phras.wrong_answer(phras.ans, y)
-            break
-        elif z % 2 != 0 and phras.ans != n:
-            phras.wrong_answer(phras.ans, n)
-            break
+    start_game(br_evens)
 
 
 if __name__ == '__main__':
