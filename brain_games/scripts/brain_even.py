@@ -11,14 +11,15 @@ def main():
     n = "no"
     print('Answer "yes" if the number is even, otherwise answer "no".')
     while x <= 3:
-        if x == 3:
-            phras.congratulations()
-            break
         z = randrange(1, 50)
         phras.question(z)
         phras.answer()
         if z % 2 == 0 and phras.ans == y or z % 2 != 0 and phras.ans == n:
-            print('Correct!')
+            if x == 2:
+                phras.congratulations()
+                break
+            else:
+                phras.correct()
             x += 1
         elif z % 2 == 0 and phras.ans != y:
             phras.wrong_answer(phras.ans, y)
