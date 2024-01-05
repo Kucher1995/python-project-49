@@ -12,7 +12,7 @@ def main():
     while x <= 3:
         z = randrange(20, 50)
         y = randrange(1, 20)
-        engine.question(f'{z}, {y}')
+        engine.quest(z, y)
         engine.answer()
         if engine.ans == str(gcd(z, y)):
             if x == 2:

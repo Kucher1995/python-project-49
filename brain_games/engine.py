@@ -22,6 +22,11 @@ def question(n):
     print(Fore.MAGENTA + f'Question: {n}')
 
 
+def quest(n, z):
+    init(autoreset=True)
+    print(Fore.MAGENTA + f'Question: {n}, {z}')
+
+
 def answer():
     global ans
     init(autoreset=True)
