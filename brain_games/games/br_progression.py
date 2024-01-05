@@ -1,5 +1,5 @@
 from random import randint
-from brain_games import eng
+from brain_games import engine
 
 
 def main():
@@ -13,18 +13,18 @@ def main():
         for i in range(num1, num2, n):
             numbers.append(i)
         numbers.sort()
-        cor_ans = numbers[n]
+        correct_answer = numbers[n]
         numbers[n] = ".."
         string = " ".join(map(str, numbers[0:10]))
-        eng.question(string)
-        eng.answer()
-        if eng.ans == str(cor_ans):
+        engine.question(string)
+        engine.answer()
+        if engine.ans == str(correct_answer):
             if x == 2:
-                eng.congratulations()
+                engine.congratulations()
                 break
             else:
-                eng.correct()
+                engine.correct()
             x += 1
-        elif eng.ans != str(cor_ans):
-            eng.wrong_answer(eng.ans, cor_ans)
+        elif engine.ans != str(correct_answer):
+            engine.wrong_answer(engine.ans, correct_answer)
             break

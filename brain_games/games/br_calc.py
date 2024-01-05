@@ -1,5 +1,5 @@
 from random import randrange
-from brain_games import eng
+from brain_games import engine
 
 
 def main():
@@ -11,15 +11,15 @@ def main():
         massiv = [f'{z} - {y}', f'{z} + {y}', f'{z} * {y}']
         random_expression = massiv[randrange(0, 3)]
         result = eval(random_expression)
-        eng.question(random_expression)
-        eng.answer()
-        if eng.ans == str(result):
+        engine.question(random_expression)
+        engine.answer()
+        if engine.ans == str(result):
             if x == 2:
-                eng.congratulations()
+                engine.congratulations()
                 break
             else:
-                eng.correct()
+                engine.correct()
             x += 1
-        elif eng.ans != str(result):
-            eng.wrong_answer(eng.ans, result)
+        elif engine.ans != str(result):
+            engine.wrong_answer(engine.ans, result)
             break
