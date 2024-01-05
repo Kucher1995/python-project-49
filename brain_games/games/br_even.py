@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from random import randrange
 from brain_games import eng
 
@@ -23,7 +22,3 @@ def main():
         elif z % 2 != 0 and eng.ans != 'no':
             eng.wrong_answer(eng.ans, 'no')
             break
-
-
-if __name__ == '__main__':
-    main()

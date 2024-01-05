@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from random import randrange
 from brain_games import eng
 from math import gcd
@@ -22,7 +21,3 @@ def main():
         elif eng.ans != str(gcd(z, y)):
             eng.wrong_answer(eng.ans, gcd(z, y))
             break
-
-
-if __name__ == '__main__':
-    main()
