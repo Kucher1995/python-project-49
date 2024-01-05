@@ -10,15 +10,14 @@ def main():
         engine.question(y)
         engine.answer()
         if engine.prime(y) is True and engine.ans == 'yes' or engine.prime(y) is False and engine.ans == 'no':
-            if x == 2:
-                engine.congratulations()
-                break
-            else:
-                engine.correct()
-                x += 1
+            engine.correct()
+            x += 1
         elif engine.prime(y) is True and engine.ans != 'yes':
             engine.wrong_answer(engine.ans, 'yes')
             break
-        elif engine.prime(y) is False and engine.ans != 'no':
+        else:
+            engine.prime(y) is False and engine.ans != 'no'
             engine.wrong_answer(engine.ans, 'no')
             break
+    else:
+        engine.congratulations()
