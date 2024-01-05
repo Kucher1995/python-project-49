@@ -4,7 +4,7 @@ from brain_games import engine
 
 
 def main():
-    print('What number is missing in the progression?')
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     x = 0
     while x <= 3:
         y = randrange(1, 20)
