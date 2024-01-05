@@ -11,7 +11,10 @@ def main():
         z = randrange(1, 50)
         engine.question(z)
         engine.answer()
-        if z % 2 == 0 and engine.ans == Y or z % 2 != 0 and engine.ans == N:
+        if z % 2 == 0 and engine.ans == Y:
+            engine.correct()
+            x += 1
+        elif z % 2 != 0 and engine.ans == N:
             engine.correct()
             x += 1
         elif z % 2 == 0 and engine.ans != Y:
