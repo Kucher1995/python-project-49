@@ -12,7 +12,7 @@ def main():
         z = randrange(20, 50)
         y = randrange(1, 20)
         massiv = [f'{z} - {y}', f'{z} + {y}', f'{z} * {y}']
-        random_expression= massiv[randrange(0, 3)]
+        random_expression = massiv[randrange(0, 3)]
         result = eval(random_expression)
         engine.question(random_expression)
         engine.answer()
