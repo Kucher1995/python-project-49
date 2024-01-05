@@ -5,7 +5,7 @@ from math import gcd
 
 
 def main():
-    print('What is the result of the expression?')
+    print('Find the greatest common divisor of given numbers.')
     x = 0
     while x <= 3:
         z = randrange(20, 50)
