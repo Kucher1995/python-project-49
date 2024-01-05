@@ -15,7 +15,7 @@ def main():
                 break
             else:
                 engine.correct()
-            x += 1
+                x += 1
         elif engine.prime(y) is True and engine.ans != 'yes':
             engine.wrong_answer(engine.ans, 'yes')
             break
