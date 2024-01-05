@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from random import randint
-from brain_games import engine
+from brain_games import eng
 
 
 def main():
@@ -17,17 +17,17 @@ def main():
         cor_ans = numbers[n]
         numbers[n] = ".."
         string = " ".join(map(str, numbers[0:10]))
-        engine.question(string)
-        engine.answer()
-        if engine.ans == str(cor_ans):
+        eng.question(string)
+        eng.answer()
+        if eng.ans == str(cor_ans):
             if x == 2:
-                engine.congratulations()
+                eng.congratulations()
                 break
             else:
-                engine.correct()
+                eng.correct()
             x += 1
-        elif engine.ans != str(cor_ans):
-            engine.wrong_answer(engine.ans, cor_ans)
+        elif eng.ans != str(cor_ans):
+            eng.wrong_answer(eng.ans, cor_ans)
             break
 
 

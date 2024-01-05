@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from random import randrange
-from brain_games import engine
+from brain_games import eng
 
 
 def main():
@@ -8,20 +8,20 @@ def main():
     x = 0
     while x <= 3:
         y = randrange(1, 20)
-        engine.question(y)
-        engine.answer()
-        if engine.prime(y) is True and engine.ans == 'yes' or engine.prime(y) is False and engine.ans == 'no':
+        eng.question(y)
+        eng.answer()
+        if eng.prime(y) is True and eng.ans == 'yes' or eng.prime(y) is False and eng.ans == 'no':
             if x == 2:
-                engine.congratulations()
+                eng.congratulations()
                 break
             else:
-                engine.correct()
+                eng.correct()
             x += 1
-        elif engine.prime(y) is True and engine.ans != 'yes':
-            engine.wrong_answer(engine.ans, 'yes')
+        elif eng.prime(y) is True and eng.ans != 'yes':
+            eng.wrong_answer(eng.ans, 'yes')
             break
-        elif engine.prime(y) is False and engine.ans != 'no':
-            engine.wrong_answer(engine.ans, 'no')
+        elif eng.prime(y) is False and eng.ans != 'no':
+            eng.wrong_answer(eng.ans, 'no')
             break
 
 

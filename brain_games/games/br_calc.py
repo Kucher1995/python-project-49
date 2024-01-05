@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from random import randrange
-from brain_games import engine
+from brain_games import eng
 
 
 def main():
@@ -12,17 +12,17 @@ def main():
         massiv = [f'{z} - {y}', f'{z} + {y}', f'{z} * {y}']
         random_expression = massiv[randrange(0, 3)]
         result = eval(random_expression)
-        engine.question(random_expression)
-        engine.answer()
-        if engine.ans == str(result):
+        eng.question(random_expression)
+        eng.answer()
+        if eng.ans == str(result):
             if x == 2:
-                engine.congratulations()
+                eng.congratulations()
                 break
             else:
-                engine.correct()
+                eng.correct()
             x += 1
-        elif engine.ans != str(result):
-            engine.wrong_answer(engine.ans, result)
+        elif eng.ans != str(result):
+            eng.wrong_answer(eng.ans, result)
             break
 
 

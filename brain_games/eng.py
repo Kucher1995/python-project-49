@@ -1,18 +1,10 @@
 #!/usr/bin/env python3
-import prompt
+from brain_games import cli
 
 
 def start_game(game):
-    welcome_user()
+    cli.welcome_user()
     game.main()
-
-
-def welcome_user():
-    print('Welcome to the Brain Games!')
-    global name
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    return name
 
 
 def question(n):
@@ -26,7 +18,7 @@ def answer():
 
 
 def wrong_answer(a, b):
-    print(f"'{a}' is wrong answer ;(. Correct answer was '{b}'. Let's try again, {name}!")
+    print(f"'{a}' is wrong answer ;(. Correct answer was '{b}'. Let's try again, {cli.name}!")
 
 
 def correct():
@@ -34,7 +26,7 @@ def correct():
 
 
 def congratulations():
-    print(f'Congratulations, {name}!')
+    print(f'Congratulations, {cli.name}!')
 
 
 def prime(z):
