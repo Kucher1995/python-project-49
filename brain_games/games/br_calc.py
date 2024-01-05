@@ -5,7 +5,7 @@ from brain_games import engine
 def main():
     print('What is the result of the expression?')
     x = 0
-    while x <= 3:
+    while x < 3:
         z = randrange(20, 50)
         y = randrange(1, 20)
         massiv = [f'{z} - {y}', f'{z} + {y}', f'{z} * {y}']
@@ -14,12 +14,10 @@ def main():
         engine.question(random_expression)
         engine.answer()
         if engine.ans == str(result):
-            if x == 2:
-                engine.congratulations()
-                break
-            else:
-                engine.correct()
+            engine.correct()
             x += 1
-        elif engine.ans != str(result):
+        else:
             engine.wrong_answer(engine.ans, result)
             break
+    else:
+        engine.congratulations()

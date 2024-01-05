@@ -17,7 +17,8 @@ def answer():
 
 
 def wrong_answer(a, b):
-    print(f"'{a}' is wrong answer ;(. Correct answer was '{b}'. Let's try again, {cli.name}!")
+    print(f"""'{a}' is wrong answer ;(. Correct answer was '{b}'.
+Let's try again, {cli.name}!""")
 
 
 def correct():
