@@ -1,9 +1,6 @@
 install:
 	poetry install
 
-brain-games:
-	poetry run brain-games
-
 build:
 	poetry build
 
@@ -21,3 +18,6 @@ lint:
 
 brain-even:
 	poetry run brain-even
+
+test:
+	poetry run pytest

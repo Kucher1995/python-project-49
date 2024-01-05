@@ -7,6 +7,8 @@ readme = "README.md"
 packages = [
   { include = "brain_games" },
 ]
+repository = "https://github.com/Kucher1995/python-project-49.git"
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -25,6 +27,7 @@ brain-prime = "brain_games.scripts.brain_prime:main"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.0.0"
+pytest = "^7.4.4"
 
 [build-system]
 requires = ["poetry-core"]
