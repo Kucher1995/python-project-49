@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 from random import randrange
 from brain_games import engine
-from colorama import init, Fore
 
 
 def main():
-    init(autoreset=True)
-    print(Fore.LIGHTMAGENTA_EX + 'Answer "yes" if the number is even, otherwise answer "no".')
+    print('Answer "yes" if the number is even, otherwise answer "no".')
     x = 0
     while x <= 3:
         z = randrange(1, 50)

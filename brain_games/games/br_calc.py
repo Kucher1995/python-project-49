@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 from random import randrange
 from brain_games import engine
-from colorama import init, Fore
 
 
 def main():
-    init(autoreset=True)
-    print(Fore.LIGHTMAGENTA_EX + 'What is the result of the expression?')
+    print('What is the result of the expression?')
     x = 0
     while x <= 3:
         z = randrange(20, 50)
