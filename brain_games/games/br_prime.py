@@ -1,5 +1,6 @@
 from random import randrange
 from brain_games import engine
+from brain_games.engine import prime as pr
 
 
 def main():
@@ -9,7 +10,10 @@ def main():
         y = randrange(1, 20)
         engine.question(y)
         engine.answer()
-        if engine.prime(y) is True and engine.ans == 'yes' or engine.prime(y) is False and engine.ans == 'no':
+        if pr(y) is True and engine.ans == 'yes':
+            engine.correct()
+            x += 1
+        elif pr(y) is False and engine.ans == 'no':
             engine.correct()
             x += 1
         elif engine.prime(y) is True and engine.ans != 'yes':
