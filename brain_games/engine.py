@@ -40,3 +40,14 @@ def correct():
 
 def congratulations():
     print(Fore.GREEN + f'Congratulations, {name}!')
+
+
+def is_prime(z):
+    k = 0
+    for i in range(2, z // 2 + 1):
+        if (z % i == 0):
+            k = k + 1
+    if (k <= 0):
+        return True
+    else:
+        return False
