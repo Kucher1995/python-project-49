@@ -5,7 +5,7 @@ from brain_games import engine
 def main():
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
     x = 0
-    while x <= 3:
+    while x < 3:
         y = randrange(1, 20)
         engine.question(y)
         engine.answer()
