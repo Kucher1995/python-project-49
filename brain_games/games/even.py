@@ -11,10 +11,10 @@ def main():
     engine.question(z)
     engine.answer()
     if engine.is_even(z) is True and engine.ans == 'yes':
-        engine.correctly_answer()
+        engine.correct_answer()
         return True
     elif engine.is_even(z) is False and engine.ans == 'no':
-        engine.correctly_answer()
+        engine.correct_answer()
         return True
     elif engine.is_even(z) is True and engine.ans != 'yes':
         engine.wrong_answer(engine.ans, 'yes')

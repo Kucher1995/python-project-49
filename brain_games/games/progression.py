@@ -20,7 +20,7 @@ def main():
     engine.question(string)
     engine.answer()
     if engine.ans == str(correct_answer):
-        engine.correctly_answer()
+        engine.correct_answer()
         return True
     else:
         engine.ans != str(correct_answer)

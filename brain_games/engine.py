@@ -30,7 +30,7 @@ def wrong_answer(a, b):
 Let's try again, {cli.name}!""")
 
 
-def correctly_answer():
+def correct_answer():
     print('Correct!')
 
 

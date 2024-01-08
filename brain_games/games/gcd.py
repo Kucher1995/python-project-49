@@ -12,7 +12,7 @@ def main():
     engine.question(f'{z} {y}')
     engine.answer()
     if engine.ans == str(engine.gcd(z, y)):
-        engine.correctly_answer()
+        engine.correct_answer()
         return True
     else:
         engine.wrong_answer(engine.ans, engine.gcd(z, y))
