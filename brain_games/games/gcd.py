@@ -11,7 +11,7 @@ def main():
     y = randrange(1, 20)
     engine.question(f'{z} {y}')
     ans = input('Your answer: ')
-    if engine.ans == str(engine.gcd(z, y)):
+    if ans == str(engine.gcd(z, y)):
         engine.correct_answer()
         return True
     else:
