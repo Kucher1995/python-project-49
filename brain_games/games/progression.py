@@ -18,11 +18,11 @@ def main():
     numbers[n] = ".."
     string = " ".join(map(str, numbers[0:10]))
     engine.question(string)
-    engine.answer()
+    ans = input('Your answer: ')
     if engine.ans == str(correct_answer):
         engine.correct_answer()
         return True
     else:
         engine.ans != str(correct_answer)
-        engine.wrong_answer(engine.ans, correct_answer)
+        engine.wrong_answer(ans, correct_answer)
         return False
