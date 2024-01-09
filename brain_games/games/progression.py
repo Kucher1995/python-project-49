@@ -19,10 +19,10 @@ def main():
     string = " ".join(map(str, numbers[0:10]))
     engine.question(string)
     ans = input('Your answer: ')
-    if engine.ans == str(correct_answer):
+    if ans == str(correct_answer):
         engine.correct_answer()
         return True
     else:
-        engine.ans != str(correct_answer)
+        ans != str(correct_answer)
         engine.wrong_answer(ans, correct_answer)
         return False
