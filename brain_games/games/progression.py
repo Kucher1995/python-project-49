@@ -17,8 +17,7 @@ def main():
     correct_answer = numbers[n]
     numbers[n] = ".."
     string = " ".join(map(str, numbers[0:10]))
-    engine.question(string)
-    ans = input('Your answer: ')
+    ans = engine.question_answer(string)
     if ans == str(correct_answer):
         engine.correct_answer()
         return True

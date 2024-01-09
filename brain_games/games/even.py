@@ -7,19 +7,18 @@ def exercise():
 
 
 def main():
-    z = randrange(1, 50)
-    engine.question(z)
-    ans = input('Your answer: ')
-    if engine.is_even(z) is True and ans == 'yes':
+    x = randrange(1, 50)
+    ans = engine.question_answer(x)
+    if engine.is_even(x) is True and ans == 'yes':
         engine.correct_answer()
         return True
-    elif engine.is_even(z) is False and ans == 'no':
+    elif engine.is_even(x) is False and ans == 'no':
         engine.correct_answer()
         return True
-    elif engine.is_even(z) is True and ans != 'yes':
+    elif engine.is_even(x) is True and ans != 'yes':
         engine.wrong_answer(ans, 'yes')
         return False
     else:
-        engine.is_even(z) is False and ans != 'no'
+        engine.is_even(x) is False and ans != 'no'
         engine.wrong_answer(ans, 'no')
         return False

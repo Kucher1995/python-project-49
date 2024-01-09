@@ -9,8 +9,7 @@ def exercise():
 def main():
     z = randrange(20, 50)
     y = randrange(1, 20)
-    engine.question(f'{z} {y}')
-    ans = input('Your answer: ')
+    ans = engine.question_answer(f'{z} {y}')
     if ans == str(engine.gcd(z, y)):
         engine.correct_answer()
         return True

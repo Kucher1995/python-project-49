@@ -15,8 +15,10 @@ def start_game(game):
         congratulate()
 
 
-def question(n):
+def question_answer(n):
     print(f'Question: {n}')
+    ans = input('Your answer: ')
+    return ans
 
 
 def wrong_answer(a, b):

@@ -7,19 +7,18 @@ def exercise():
 
 
 def main():
-    y = randrange(1, 20)
-    engine.question(y)
-    ans = input('Your answer: ')
-    if engine.is_prime(y) is True and ans == 'yes':
+    x = randrange(1, 20)
+    ans = engine.question_answer(x)
+    if engine.is_prime(x) is True and ans == 'yes':
         engine.correct_answer()
         return True
-    elif engine.is_prime(y) is False and ans == 'no':
+    elif engine.is_prime(x) is False and ans == 'no':
         engine.correct_answer()
         return True
-    elif engine.is_prime(y) is True and ans != 'yes':
+    elif engine.is_prime(x) is True and ans != 'yes':
         engine.wrong_answer(ans, 'yes')
         return False
     else:
-        engine.is_prime(y) is False and ans != 'no'
+        engine.is_prime(x) is False and ans != 'no'
         engine.wrong_answer(ans, 'no')
         return False

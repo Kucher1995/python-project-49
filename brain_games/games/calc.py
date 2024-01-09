@@ -12,8 +12,7 @@ def main():
     massiv = ['-', '+', '*']
     random_expression = massiv[randrange(0, 3)]
     x = f'{z} {random_expression} {y}'
-    engine.question(x)
-    ans = input('Your answer: ')
+    ans = engine.question_answer(x)
     match random_expression:
         case '-':
             if z - y == int(ans):
