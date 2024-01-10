@@ -1,24 +1,29 @@
 from random import randrange
-from brain_games import engine
 
 
 def exercise():
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
 
-def main():
-    x = randrange(1, 20)
-    ans = engine.question_answer(x)
-    if engine.is_prime(x) is True and ans == 'yes':
-        engine.correct_answer()
-        return True
-    elif engine.is_prime(x) is False and ans == 'no':
-        engine.correct_answer()
-        return True
-    elif engine.is_prime(x) is True and ans != 'yes':
-        engine.wrong_answer(ans, 'yes')
-        return False
+def question():
+    num1 = randrange(1, 20)
+    k = 0
+    for i in range(2, num1 // 2 + 1):
+        if (num1 % i == 0):
+            k = k + 1
+    if (k <= 0):
+        return num1, 'yes', None, None
     else:
-        engine.is_prime(x) is False and ans != 'no'
-        engine.wrong_answer(ans, 'no')
-        return False
+        return num1, 'no', None, None
+
+
+def main(ans, ch, y=0, x=0):
+    if ch == 'yes' and ans == 'yes':
+        return True, ans
+    elif ch == 'no' and ans == 'no':
+        return True, ans
+    elif ch == 'yes' and ans != 'yes':
+        return False, 'yes'
+    else:
+        ch == 'no' and ans != 'no'
+        return False, 'no'

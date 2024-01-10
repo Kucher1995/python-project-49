@@ -2,61 +2,47 @@ from brain_games import cli
 
 
 def start_game(game):
-    cli.welcome_user()
+    name = cli.welcome_user()
     game.exercise()
     x = 0
     while x < 3:
-        y = game.main()
-        if y is True:
+        w = game.question()
+        num1 = w[2]
+        num2 = w[3]
+        question(w[0])
+        ans = answer()
+        check = w[1]
+        y = game.main(ans, check, num1, num2)
+        true_false = y[0]
+        false = y[1]
+        if true_false is True:
+            correct_answer()
             x += 1
-        elif y is False:
+            continue
+        elif true_false is False:
+            wrong_answer(ans, name, false)
             break
     else:
-        congratulate()
+        congratulate(name)
 
 
-def question_answer(n):
+def question(n):
     print(f'Question: {n}')
+
+
+def answer():
     ans = input('Your answer: ')
     return ans
 
 
-def wrong_answer(a, b):
-    print(f"""'{a}' is wrong answer ;(. Correct answer was '{b}'.
-Let's try again, {cli.name}!""")
+def wrong_answer(ans, name, check):
+    print(f"""{ans} is wrong answer ;(. Correct answer was {check}.
+Let's try again, {name}!""")
 
 
 def correct_answer():
     print('Correct!')
 
 
-def congratulate():
-    print(f'Congratulations, {cli.name}!')
-
-
-def is_prime(z):
-    k = 0
-    for i in range(2, z // 2 + 1):
-        if (z % i == 0):
-            k = k + 1
-    if (k <= 0):
-        return True
-    else:
-        return False
-
-
-def is_even(x):
-    if x % 2 == 0:
-        return True
-    else:
-        x % 2 != 0
-        return False
-
-
-def gcd(m, n):
-    while m != n:
-        if m > n:
-            m = m - n
-        else:
-            n = n - m
-    return n
+def congratulate(name):
+    print(f'Congratulations, {name}!')

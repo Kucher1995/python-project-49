@@ -1,18 +1,24 @@
 from random import randrange
-from brain_games import engine
 
 
 def exercise():
     print('Find the greatest common divisor of given numbers.')
 
 
-def main():
-    z = randrange(20, 50)
-    y = randrange(1, 20)
-    ans = engine.question_answer(f'{z} {y}')
-    if ans == str(engine.gcd(z, y)):
-        engine.correct_answer()
-        return True
+def question():
+    num1 = randrange(1, 20)
+    num2 = randrange(20, 50)
+    numbs = (f'{num2} {num1}')
+    while num1 != num2:
+        if num1 > num2:
+            num1 = num1 - num2
+        else:
+            num2 = num2 - num1
+    return numbs, num2, None, None
+
+
+def main(ans, check, y=0, x=0):
+    if ans == str(check):
+        return True, ans
     else:
-        engine.wrong_answer(ans, engine.gcd(z, y))
-        return False
+        return False, check

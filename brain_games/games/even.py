@@ -1,24 +1,26 @@
-from random import randrange
-from brain_games import engine
+from random import randint
 
 
 def exercise():
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
 
-def main():
-    x = randrange(1, 50)
-    ans = engine.question_answer(x)
-    if engine.is_even(x) is True and ans == 'yes':
-        engine.correct_answer()
-        return True
-    elif engine.is_even(x) is False and ans == 'no':
-        engine.correct_answer()
-        return True
-    elif engine.is_even(x) is True and ans != 'yes':
-        engine.wrong_answer(ans, 'yes')
-        return False
+def question():
+    num1 = randint(1, 20)
+    if num1 % 2 == 0:
+        return num1, 'yes', None, None
     else:
-        engine.is_even(x) is False and ans != 'no'
-        engine.wrong_answer(ans, 'no')
-        return False
+        num1 % 2 != 0
+        return num1, 'no', None, None
+
+
+def main(ans, z, y=0, x=0):
+    if z == 'yes' and ans == 'yes':
+        return True, ans
+    elif z == 'no' and ans == 'no':
+        return True, ans
+    elif z == 'yes' and ans != 'yes':
+        return False, 'yes'
+    else:
+        z == 'no' and ans != 'no'
+        return False, 'no'
