@@ -6,43 +6,37 @@ def start_game(game):
     game.exercise()
     x = 0
     while x < 3:
-        w = game.question()
-        num1 = w[2]
-        num2 = w[3]
-        question(w[0])
-        ans = answer()
-        check = w[1]
-        y = game.main(ans, check, num1, num2)
-        true_false = y[0]
-        false = y[1]
-        if true_false is True:
-            correct_answer()
+        w = game.generate_question()
+        get_question(w[0])
+        ans = get_answer()
+        if ans == str(w[1]):
+            print_correct()
             x += 1
             continue
-        elif true_false is False:
-            wrong_answer(ans, name, false)
+        elif ans != w[1]:
+            print_wrong_answer(ans, name, w[1])
             break
     else:
-        congratulate(name)
+        print_congratulate(name)
 
 
-def question(n):
+def get_question(n):
     print(f'Question: {n}')
 
 
-def answer():
+def get_answer():
     ans = input('Your answer: ')
     return ans
 
 
-def wrong_answer(ans, name, check):
+def print_wrong_answer(ans, name, check):
     print(f"""{ans} is wrong answer ;(. Correct answer was {check}.
 Let's try again, {name}!""")
 
 
-def correct_answer():
+def print_correct():
     print('Correct!')
 
 
-def congratulate(name):
+def print_congratulate(name):
     print(f'Congratulations, {name}!')

@@ -19,7 +19,7 @@ def random_progression():
     return correct_answer, string
 
 
-def question():
+def generate_question():
     num1 = randint(1, 10)
     num2 = randint(100, 120)
     n = randint(2, 9)
@@ -30,12 +30,4 @@ def question():
     correct_answer = numbers[n]
     numbers[n] = ".."
     string = " ".join(map(str, numbers[0:10]))
-    return string, correct_answer, None, None
-
-
-def main(ans, correct_answer, y=0, x=0):
-    if ans == str(correct_answer):
-        return True, ans
-    else:
-        ans != str(correct_answer)
-        return False, correct_answer
+    return string, correct_answer
