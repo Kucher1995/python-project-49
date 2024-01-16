@@ -3,18 +3,16 @@ from brain_games import cli
 
 def start_game(game):
     name = cli.welcome_user()
-    game.exercise()
-    x = 0
-    while x < 3:
-        w = game.generate_question()
-        get_question(w[0])
-        ans = get_answer()
-        if ans == str(w[1]):
+    print(game.exercise)
+    for i in range(0, 3):
+        question, correct_answer = game.generate_question()
+        get_question(question)
+        user_answer = get_answer()
+        if user_answer == str(correct_answer):
             print_correct()
-            x += 1
             continue
-        elif ans != w[1]:
-            print_wrong_answer(ans, name, w[1])
+        elif user_answer != correct_answer:
+            print_wrong_answer(user_answer, name, correct_answer)
             break
     else:
         print_congratulate(name)
@@ -25,12 +23,12 @@ def get_question(n):
 
 
 def get_answer():
-    ans = input('Your answer: ')
-    return ans
+    answer = input('Your answer: ')
+    return answer
 
 
-def print_wrong_answer(ans, name, check):
-    print(f"""{ans} is wrong answer ;(. Correct answer was {check}.
+def print_wrong_answer(answer, name, correct_answer):
+    print(f"""{answer} is wrong answer ;(. Correct answer was {correct_answer}.
 Let's try again, {name}!""")
 
 

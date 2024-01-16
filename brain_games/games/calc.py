@@ -1,8 +1,18 @@
 from random import randrange
 
 
-def exercise():
-    print('What is the result of the expression?')
+exercise = 'What is the result of the expression?'
+
+
+def result(num1, num2, random_expression):
+    match random_expression:
+        case '-':
+            x = num1 - num2
+        case '+':
+            x = num1 + num2
+        case '*':
+            x = num1 * num2
+    return x
 
 
 def generate_question():
@@ -11,13 +21,5 @@ def generate_question():
     massiv = ['-', '+', '*']
     random_expression = massiv[randrange(0, 3)]
     w = f'{num1} {random_expression} {num2}'
-    match random_expression:
-        case '-':
-            x = num1 - num2
-            return w, x
-        case '+':
-            x = num1 + num2
-            return w, x
-        case '*':
-            x = num1 * num2
-            return w, x
+    ans = result(num1, num2, random_expression)
+    return w, ans
