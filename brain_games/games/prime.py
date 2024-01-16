@@ -13,7 +13,6 @@ def is_prime(num1):
     return True
 
 
-
 def generate_question():
     num1 = randrange(1, 20)
     if is_prime(num1) is True:
