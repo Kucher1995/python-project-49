@@ -1,7 +1,7 @@
 from random import randint
 
 
-exercise = 'What number is missing in the progression?'
+EXERCISE = 'What number is missing in the progression?'
 
 
 def generate_question():
@@ -15,3 +15,4 @@ def generate_question():
     numbers[n] = ".."
     string = " ".join(map(str, numbers[0:10]))
     return string, correct_answer
+# Random progression generation

@@ -1,7 +1,7 @@
 from random import randint
 
 
-exercise = 'Answer "yes" if the number is even, otherwise answer "no".'
+EXERCISE = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def is_prime(num1):
@@ -9,6 +9,7 @@ def is_prime(num1):
         return True
     else:
         return False
+# Number check
 
 
 def generate_question():
@@ -17,3 +18,4 @@ def generate_question():
         return num1, 'yes'
     else:
         return num1, 'no'
+# Random number generation

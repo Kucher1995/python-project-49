@@ -1,7 +1,7 @@
 from random import randrange
 
 
-exercise = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+EXERCISE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def is_prime(num1):
@@ -11,6 +11,7 @@ def is_prime(num1):
         if num1 % i == 0:
             return False
     return True
+# Number check
 
 
 def generate_question():
@@ -19,3 +20,4 @@ def generate_question():
         return num1, 'yes'
     else:
         return num1, 'no'
+# Random number generation

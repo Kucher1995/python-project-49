@@ -1,7 +1,7 @@
 from random import randrange
 
 
-exercise = 'Find the greatest common divisor of given numbers.'
+EXERCISE = 'Find the greatest common divisor of given numbers.'
 
 
 def gcd(num1, num2):
@@ -11,6 +11,7 @@ def gcd(num1, num2):
         else:
             num2 = num2 - num1
     return num2
+# Determining the greatest common divisor
 
 
 def generate_question():
@@ -19,3 +20,4 @@ def generate_question():
     numbs = (f'{num2} {num1}')
     ans = gcd(num1, num2)
     return numbs, ans
+# Random number generation

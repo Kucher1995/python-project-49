@@ -1,7 +1,7 @@
 from random import randrange
 
 
-exercise = 'What is the result of the expression?'
+EXERCISE = 'What is the result of the expression?'
 
 
 def result(num1, num2, random_expression):
@@ -13,6 +13,7 @@ def result(num1, num2, random_expression):
         case '*':
             x = num1 * num2
     return x
+# Calculating the result of a random expression
 
 
 def generate_question():
@@ -23,3 +24,4 @@ def generate_question():
     w = f'{num1} {random_expression} {num2}'
     ans = result(num1, num2, random_expression)
     return w, ans
+# Generating a random expression
