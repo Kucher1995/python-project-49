@@ -4,7 +4,7 @@ from random import randrange
 EXERCISE = 'What is the result of the expression?'
 
 
-def result(num1, num2, random_expression):
+def get_result(num1, num2, random_expression):
     '''Calculating the result of a random expression'''
     match random_expression:
         case '-':
@@ -22,6 +22,6 @@ def generate_question():
     num2 = randrange(1, 20)
     massiv = ['-', '+', '*']
     random_expression = massiv[randrange(0, 3)]
-    w = f'{num1} {random_expression} {num2}'
-    ans = result(num1, num2, random_expression)
-    return w, ans
+    random_expression = f'{num1} {random_expression} {num2}'
+    correct_answer = get_result(num1, num2, random_expression)
+    return random_expression, correct_answer

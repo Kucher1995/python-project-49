@@ -18,6 +18,6 @@ def generate_question():
     '''Generates random numbers and returns the correct answer.'''
     num1 = randrange(1, 20)
     num2 = randrange(20, 50)
-    numbs = (f'{num2} {num1}')
-    ans = gcd(num1, num2)
-    return numbs, ans
+    number = (f'{num2} {num1}')
+    correct_answer = gcd(num1, num2)
+    return number, correct_answer

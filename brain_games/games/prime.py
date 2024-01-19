@@ -6,8 +6,8 @@ EXERCISE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 def is_prime(num1):
     '''Checking a number for prime.'''
-    if num1 <= 1:
-        return True
+    if num1 == 1:
+        return False
     for i in range(2, int(num1**0.5) + 1):
         if num1 % i == 0:
             return False

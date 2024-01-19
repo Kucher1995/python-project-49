@@ -14,5 +14,5 @@ def generate_question():
         numbers.append(i)
     correct_answer = numbers[n]
     numbers[n] = ".."
-    string = " ".join(map(str, numbers[0:10]))
-    return string, correct_answer
+    sequence_numbers = " ".join(map(str, numbers[0:10]))
+    return sequence_numbers, correct_answer
