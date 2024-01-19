@@ -2,6 +2,11 @@ from brain_games import cli
 
 
 def start_game(game):
+    '''Launch the selected game.
+    Greeting the player.
+    Explanation of the rules.
+    Checking the player's answer for correctness
+    '''
     name = cli.welcome_user()
     print(game.EXERCISE)
     x = 0
@@ -18,32 +23,30 @@ def start_game(game):
             break
     else:
         print_congratulate(name)
-# Launch the selected game. Greeting the player.
-# Explanation of the rules. checking the player's answer for correctness
 
 
 def get_question(n):
+    '''Displaying a question to the user'''
     print(f'Question: {n}')
-# Displaying a question to the user
 
 
 def get_answer():
+    '''Getting a response from the user'''
     answer = input('Your answer: ')
     return answer
-# Getting a response from the user
 
 
 def print_wrong_answer(answer, name, correct_answer):
+    '''Display user error message'''
     print(f"""{answer} is wrong answer ;(. Correct answer was {correct_answer}.
 Let's try again, {name}!""")
-# Display user error message
 
 
 def print_correct():
+    '''Displaying a message about the user's correct answer'''
     print('Correct!')
-# Displaying a message about the user's correct answer
 
 
 def print_congratulate(name):
+    '''Congratulations to the user on his victor'''
     print(f'Congratulations, {name}!')
-# Congratulations to the user on his victory

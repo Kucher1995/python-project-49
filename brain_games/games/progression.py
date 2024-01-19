@@ -5,6 +5,7 @@ EXERCISE = 'What number is missing in the progression?'
 
 
 def generate_question():
+    '''Random progression generation and returns the correct answer.'''
     num1 = randint(1, 10)
     num2 = randint(100, 120)
     n = randint(2, 9)
@@ -15,4 +16,3 @@ def generate_question():
     numbers[n] = ".."
     string = " ".join(map(str, numbers[0:10]))
     return string, correct_answer
-# Random progression generation
